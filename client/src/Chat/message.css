@@ -1,0 +1,19 @@
+.messageContainer {
+  padding: 15px;
+  color: white;
+}
+
+.messageTimeStamp {
+  color: lightgray;
+  font-size: small;
+  margin-left: 5px;
+}
+
+.messageHeader {
+  display: flex;
+}
+
+.trash-button {
+  cursor: pointer;
+  margin-left: 10px !important;
+}

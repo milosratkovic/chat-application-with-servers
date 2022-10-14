@@ -1,0 +1,17 @@
+FROM python:3.9.8-buster
+
+ENV PYTHONUNBUFFERED=1
+
+COPY wait.sh /
+
+RUN chmod +x /wait.sh
+
+COPY app/requirements.txt /app/
+
+RUN pip install -r /app/requirements.txt
+
+COPY app /app
+
+RUN mkdir -p /shared/sockets && chown www-data:www-data /shared/sockets
+
+CMD ./wait.sh db 5432 && /usr/local/bin/uwsgi --ini /app/uwsgi.ini
