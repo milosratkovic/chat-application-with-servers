@@ -29,7 +29,7 @@ const SignIn = () => {
 
   return (
     <div style={{ margin: "2em" }}>
-      <Header as="h1"> Welcome to the project for CMPT 470 of group 1 </Header>
+      <Header as="h1"> Log in with Username: "user1" Password: "user1" or Username: "user2" Password: "user2"  </Header>
       <p>Please log in with your username and password.</p>
       <Form onSubmit={handleSubmit}>
         {errorMessage && <p> Error: {errorMessage} </p>}
